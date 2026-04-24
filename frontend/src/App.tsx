@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from '@/pages/Home/Home'
+import { Articles } from '@/pages/Articles/Articles'
+import { ArticleDetail } from '@/pages/ArticleDetail/ArticleDetail'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/styles/global.css'
 
@@ -8,6 +10,8 @@ export function App() {
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:slug" element={<ArticleDetail />} />
       </Routes>
     </BrowserRouter>
   )

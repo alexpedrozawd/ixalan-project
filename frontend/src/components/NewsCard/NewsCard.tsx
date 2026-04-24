@@ -8,7 +8,7 @@ interface NewsCardProps {
 export function NewsCard({ article }: NewsCardProps) {
   return (
     <article className={styles.card} data-testid="news-card">
-      <a href={`/articles/${article.slug}`} className={styles.imageLink} tabIndex={-1} aria-hidden="true">
+      <a href={`${import.meta.env.BASE_URL}articles/${article.slug}`} className={styles.imageLink} tabIndex={-1} aria-hidden="true">
         <div className={styles.imageWrapper}>
           <img
             src={article.imageUrl}
@@ -19,7 +19,7 @@ export function NewsCard({ article }: NewsCardProps) {
         </div>
       </a>
       <div className={styles.body}>
-        <a href={`/articles/${article.slug}`} className={styles.titleLink}>
+        <a href={`${import.meta.env.BASE_URL}articles/${article.slug}`} className={styles.titleLink}>
           <h3 className={styles.title}>{article.title}</h3>
         </a>
         <p className={styles.description}>{article.description}</p>

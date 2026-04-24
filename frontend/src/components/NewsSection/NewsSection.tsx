@@ -1,5 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { NewsCard } from '@/components/NewsCard/NewsCard'
+import { ARTICLES } from '@/data/articles'
 import type { NewsArticle, SidebarSection } from '@/types'
 import styles from './NewsSection.module.css'
 
@@ -21,46 +22,11 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
   },
 ]
 
-const MOCK_ARTICLES: NewsArticle[] = [
-  {
-    id: 1,
-    title: 'Rampaging Ferocidon Banned',
-    description: 'New banned and restricted update added Rampaging Ferocidon to the banned things to Standard format.',
-    imageUrl: 'https://api.scryfall.com/cards/xln/154?format=image&version=art_crop',
-    date: '2018-01-15',
-    slug: 'rampaging-ferocidon-banned',
-  },
-  {
-    id: 2,
-    title: 'River Sneak: Best Merfolk of Ixalan',
-    description: 'Dive deep into the Merfolk tribe and discover why River Sneak is the backbone of every competitive Merfolk list.',
-    imageUrl: 'https://api.scryfall.com/cards/xln/67?format=image&version=art_crop',
-    date: '2018-01-10',
-    slug: 'river-sneak-best-merfolk',
-  },
-  {
-    id: 3,
-    title: 'Rivals of Ixalan — Full Spoiler',
-    description: 'The complete card gallery for Rivals of Ixalan is here. Explore all 196 cards from the newest set.',
-    imageUrl: 'https://api.scryfall.com/cards/rix/90?format=image&version=art_crop',
-    date: '2018-01-05',
-    slug: 'rivals-of-ixalan-full-spoiler',
-  },
-  {
-    id: 4,
-    title: 'Top 5 Dinosaurs in Standard',
-    description: 'From Ripjaw Raptor to Ghalta, Primal Hunger, find out which dinosaurs are dominating the Standard meta.',
-    imageUrl: 'https://api.scryfall.com/cards/xln/203?format=image&version=art_crop',
-    date: '2018-01-02',
-    slug: 'top-5-dinosaurs-standard',
-  },
-]
-
 interface NewsSectionProps {
   articles?: NewsArticle[]
 }
 
-export function NewsSection({ articles = MOCK_ARTICLES }: NewsSectionProps) {
+export function NewsSection({ articles = ARTICLES }: NewsSectionProps) {
   return (
     <section className={styles.section} aria-label="Ixalan News" data-testid="news-section">
       <Container>

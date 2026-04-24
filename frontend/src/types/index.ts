@@ -1,3 +1,11 @@
+export interface ArticleBodySection {
+  type: 'paragraph' | 'list' | 'card-image'
+  content?: string
+  items?: string[]
+  cardUrl?: string
+  cardAlt?: string
+}
+
 export interface NewsArticle {
   id: number
   title: string
@@ -5,6 +13,7 @@ export interface NewsArticle {
   imageUrl: string
   date: string
   slug: string
+  body?: ArticleBodySection[]
 }
 
 export interface SidebarSection {
