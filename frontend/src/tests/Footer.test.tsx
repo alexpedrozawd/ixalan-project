@@ -11,12 +11,17 @@ describe('Footer', () => {
   it('renders the copyright notice', () => {
     render(<Footer />)
     expect(screen.getByText(/© alexandre pedroza/i)).toBeInTheDocument()
-    expect(screen.getByText(/all rights reserved. 2018/i)).toBeInTheDocument()
   })
 
-  it('renders the Wizards of the Coast credit', () => {
+  it('does not render "All rights reserved" text', () => {
     render(<Footer />)
-    expect(screen.getByText(/wizards of the coast/i)).toBeInTheDocument()
+    expect(screen.queryByText(/all rights reserved/i)).not.toBeInTheDocument()
+  })
+
+  it('does not render "Wizards of the Coast" as a standalone paragraph', () => {
+    render(<Footer />)
+    const wotcParagraph = screen.queryByText(/^wizards of the coast$/i)
+    expect(wotcParagraph).not.toBeInTheDocument()
   })
 
   it('renders the Magic: The Gathering external link', () => {
@@ -47,7 +52,6 @@ describe('Footer', () => {
 
   it('Magic logo image handles load error gracefully', () => {
     render(<Footer />)
-    const img = screen.getByAltText('Magic: The Gathering')
-    expect(img).toBeInTheDocument()
+    expect(screen.getByAltText('Magic: The Gathering')).toBeInTheDocument()
   })
 })

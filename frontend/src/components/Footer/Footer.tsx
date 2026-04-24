@@ -17,9 +17,8 @@ export function Footer() {
 
         <div className={styles.credits}>
           <p className={styles.copyright}>
-            © Alexandre Pedroza. Web Developer. All rights reserved. 2018
+            © Alexandre Pedroza. Web Developer.
           </p>
-          <p className={styles.wotc}>Wizards of the Coast</p>
         </div>
 
         <div className={styles.brandLogo}>
