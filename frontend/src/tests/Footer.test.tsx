@@ -3,11 +3,6 @@ import { render, screen } from '@testing-library/react'
 import { Footer } from '@/components/Footer/Footer'
 
 describe('Footer', () => {
-  it('renders the IXALAN brand logo text', () => {
-    render(<Footer />)
-    expect(screen.getByText('IXALAN')).toBeInTheDocument()
-  })
-
   it('renders the copyright notice', () => {
     render(<Footer />)
     expect(screen.getByText(/© alexandre pedroza/i)).toBeInTheDocument()

@@ -1,4 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="4" fill="#1c1c1c"/>
-  <text x="50%" y="72%" text-anchor="middle" font-family="serif" font-size="20" font-weight="bold" fill="#c9a84c">I</text>
+  <!-- Outer rim -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#c9aa71" stroke-width="1.5"/>
+  <!-- 8 spokes: from hub edge (r=4.5) to rim inner edge (r=11.5) -->
+  <line x1="16" y1="11.5" x2="16" y2="4.5" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="19.18" y1="12.82" x2="24.13" y2="7.87" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="20.5" y1="16" x2="27.5" y2="16" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="19.18" y1="19.18" x2="24.13" y2="24.13" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="16" y1="20.5" x2="16" y2="27.5" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="12.82" y1="19.18" x2="7.87" y2="24.13" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="11.5" y1="16" x2="4.5" y2="16" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="12.82" y1="12.82" x2="7.87" y2="7.87" stroke="#c9aa71" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Hub ring -->
+  <circle cx="16" cy="16" r="3.5" fill="#1c1c1c" stroke="#c9aa71" stroke-width="1.2"/>
+  <!-- Hub center -->
+  <circle cx="16" cy="16" r="1.5" fill="#c9aa71"/>
 </svg>

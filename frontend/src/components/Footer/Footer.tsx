@@ -43,9 +43,6 @@ export function Footer() {
           </p>
         </div>
 
-        <div className={styles.brandLogo}>
-          <span className={styles.ixalanLogo} aria-label="Ixalan">IXALAN</span>
-        </div>
       </div>
     </footer>
   )
