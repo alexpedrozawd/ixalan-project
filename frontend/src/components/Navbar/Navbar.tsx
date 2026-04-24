@@ -3,19 +3,21 @@ import { Navbar as BsNavbar, Nav, NavDropdown, Container } from 'react-bootstrap
 import type { Language, NavLink } from '@/types'
 import styles from './Navbar.module.css'
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 const NAV_LINKS: NavLink[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Articles', href: '/articles' },
+  { label: 'Home', href: `${BASE}/` },
+  { label: 'Articles', href: `${BASE}/articles` },
   {
     label: 'Card Database',
-    href: '/card-database',
+    href: `${BASE}/card-database`,
     hasDropdown: true,
     dropdownItems: [
-      { label: 'Ixalan', href: '/card-database/ixalan' },
-      { label: 'Rivals of Ixalan', href: '/card-database/rivals' },
+      { label: 'Ixalan', href: `${BASE}/card-database/ixalan` },
+      { label: 'Rivals of Ixalan', href: `${BASE}/card-database/rivals` },
     ],
   },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Contact', href: `${BASE}/contact` },
 ]
 
 interface NavbarProps {
@@ -34,7 +36,7 @@ export function Navbar({ activePage = 'home' }: NavbarProps) {
       data-testid="navbar"
     >
       <Container fluid="xl">
-        <BsNavbar.Brand href="/" className={styles.brand} aria-label="Ixalan News Home">
+        <BsNavbar.Brand href={`${BASE}/`} className={styles.brand} aria-label="Ixalan News Home">
           <span className={styles.brandIxalan}>IXALAN</span>
           <span className={styles.brandNews}>NEWS</span>
         </BsNavbar.Brand>
