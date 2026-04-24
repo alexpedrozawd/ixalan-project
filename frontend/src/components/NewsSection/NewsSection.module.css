@@ -1,0 +1,76 @@
+.section {
+  background-color: var(--color-bg-light);
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+
+.cardsColumn {
+  order: 1;
+}
+
+.sidebarColumn {
+  order: 2;
+}
+
+.viewMore {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+}
+
+.viewMoreLink {
+  display: inline-block;
+  color: var(--color-red-dark);
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--color-red-dark);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.viewMoreLink:hover,
+.viewMoreLink:focus-visible {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  outline: none;
+}
+
+.sidebarHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 900;
+  color: var(--color-red-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.1;
+}
+
+.sidebarBlock {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.sidebarSubheading {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.sidebarText {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.3vw, 0.875rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .sidebarColumn {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}

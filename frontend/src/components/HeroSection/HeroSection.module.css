@@ -1,0 +1,77 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.15;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(201, 168, 76, 0.25);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: 0.02em;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: clamp(0.55rem, 1.5vw, 0.75rem) clamp(1.5rem, 4vw, 2.5rem);
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.ctaButton:hover,
+.ctaButton:focus-visible {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-dark);
+  outline: none;
+}
+
+.ctaButton:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.6rem;
+  }
+}
