@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/ixalan-icon.svg" />
+    <script>
+      // Restore route redirected by 404.html (GitHub Pages SPA fix)
+      (function () {
+        var p = window.location.search.match(/[?&]p=([^&]*)/);
+        if (p) {
+          var q = window.location.search.match(/[?&]q=([^&]*)/);
+          window.history.replaceState(
+            null, null,
+            window.location.pathname +
+            '/' + decodeURIComponent(p[1]).replace(/~and~/g, '&') +
+            (q ? '?' + decodeURIComponent(q[1]).replace(/~and~/g, '&') : '') +
+            window.location.hash
+          );
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ixalan News — The latest news about Magic: The Gathering Ixalan and Rivals of Ixalan" />
     <title>Ixalan News</title>
