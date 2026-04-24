@@ -9,6 +9,7 @@
 
 .sidebarColumn {
   order: 2;
+  align-self: center;
 }
 
 .viewMore {
