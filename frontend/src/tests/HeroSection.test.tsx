@@ -20,10 +20,10 @@ describe('HeroSection', () => {
     expect(cta).toHaveAttribute('href', '/articles')
   })
 
-  it('applies background-image style', () => {
+  it('applies background-image style from local asset', () => {
     render(<HeroSection />)
     const section = screen.getByTestId('hero-section')
-    expect(section.style.backgroundImage).toContain('scryfall')
+    expect(section.style.backgroundImage).toContain('hero-rivals-ixalan')
   })
 
   it('has data-testid attribute', () => {

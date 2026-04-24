@@ -1,12 +1,11 @@
+import heroImage from '@/assets/images/hero-rivals-ixalan.jpg'
 import styles from './HeroSection.module.css'
-
-const HERO_IMAGE = 'https://api.scryfall.com/cards/rix/159?format=image&version=art_crop'
 
 export function HeroSection() {
   return (
     <section
       className={styles.hero}
-      style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+      style={{ backgroundImage: `url(${heroImage})` }}
       aria-label="Rivals of Ixalan — Available in stores"
       data-testid="hero-section"
     >
