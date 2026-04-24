@@ -11,8 +11,8 @@
           var q = window.location.search.match(/[?&]q=([^&]*)/);
           window.history.replaceState(
             null, null,
-            window.location.pathname +
-            '/' + decodeURIComponent(p[1]).replace(/~and~/g, '&') +
+            window.location.pathname.replace(/\/$/, '') +
+            decodeURIComponent(p[1]).replace(/~and~/g, '&') +
             (q ? '?' + decodeURIComponent(q[1]).replace(/~and~/g, '&') : '') +
             window.location.hash
           );
