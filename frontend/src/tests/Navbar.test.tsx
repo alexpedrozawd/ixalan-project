@@ -13,7 +13,7 @@ describe('Navbar', () => {
     render(<Navbar />)
     expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Articles' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Contact' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Contact' })).toBeInTheDocument()
   })
 
   it('renders Card Database dropdown trigger', () => {
@@ -63,7 +63,7 @@ describe('Navbar', () => {
 
   it('renders toggle button for mobile', () => {
     render(<Navbar />)
-    expect(screen.getByRole('button', { name: /toggle navigation menu/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /toggle navigation/i })).toBeInTheDocument()
   })
 
   it('has data-testid attribute', () => {

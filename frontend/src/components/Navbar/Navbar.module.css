@@ -65,6 +65,12 @@
   font-weight: 600;
 }
 
+.navLinkBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .navDropdown :global(.nav-link) {
   color: var(--color-white) !important;
   font-size: clamp(0.8rem, 1.2vw, 0.9rem);

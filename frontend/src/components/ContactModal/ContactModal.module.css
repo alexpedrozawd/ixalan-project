@@ -1,0 +1,141 @@
+.modalContent {
+  background-color: #1a1a2e;
+  border: 1px solid var(--color-gold);
+  border-radius: 8px;
+  color: var(--color-white);
+}
+
+.modalHeader {
+  background-color: #14142a;
+  border-bottom: 1px solid rgba(201, 170, 113, 0.3);
+  padding: 1rem 1.5rem;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.06em;
+}
+
+.modalBody {
+  background-color: #1a1a2e;
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.1rem;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(201, 170, 113, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+}
+
+.input,
+.textarea {
+  background-color: #0f0f1e;
+  border: 1px solid rgba(201, 170, 113, 0.35);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  background-color: #0f0f1e;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 0.15rem rgba(201, 170, 113, 0.25);
+  color: rgba(255, 255, 255, 0.95);
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.errorMsg {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: #e07070;
+  margin-bottom: 0.75rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+.btnSend {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #0f0f1e;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1.4rem;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.btnSend:hover:not(:disabled),
+.btnSend:focus:not(:disabled) {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #0f0f1e;
+  opacity: 0.85;
+}
+
+.btnCancel {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btnCancel:hover:not(:disabled),
+.btnCancel:focus:not(:disabled) {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.successMsg {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-body);
+}
+
+.successIcon {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+.successMsg p {
+  font-size: 0.95rem;
+  margin: 0;
+}
