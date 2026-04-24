@@ -25,14 +25,12 @@ describe('AboutSection', () => {
     expect(screen.getByText(/ixalan is a plane/i)).toBeInTheDocument()
   })
 
-  it('renders the first card with descriptive alt text', () => {
+  it('renders all four cards with descriptive alt text', () => {
     render(<AboutSection />)
     expect(screen.getByAltText(/huatli, warrior poet/i)).toBeInTheDocument()
-  })
-
-  it('renders the second card with descriptive alt text', () => {
-    render(<AboutSection />)
     expect(screen.getByAltText(/kumena, tyrant of orazca/i)).toBeInTheDocument()
+    expect(screen.getByAltText(/gishath, sun's avatar/i)).toBeInTheDocument()
+    expect(screen.getByAltText(/the immortal sun/i)).toBeInTheDocument()
   })
 
   it('card images have lazy loading', () => {

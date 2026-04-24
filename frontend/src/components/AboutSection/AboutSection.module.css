@@ -50,11 +50,11 @@
 }
 
 .stackedCards {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.6rem, 1.5vw, 1rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.4rem, 1vw, 0.65rem);
   width: 100%;
-  max-width: 260px;
+  max-width: 340px;
 }
 
 .cardWrapper {
@@ -82,13 +82,7 @@
   }
 
   .stackedCards {
-    flex-direction: row;
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  .cardWrapper {
-    width: 48%;
-    max-width: 200px;
+    max-width: 380px;
+    margin: 0 auto;
   }
 }
