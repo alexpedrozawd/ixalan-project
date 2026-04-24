@@ -22,7 +22,7 @@ export function Footer() {
           <p className={styles.linksLine}>
             Magic: The Gathering is a Wizards property{' '}
             <a
-              href="https://magic.wizards.com/en/products/ixalan"
+              href="https://magic.wizards.com/en/news/card-image-gallery/ixalan"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.blockLink}
@@ -32,7 +32,7 @@ export function Footer() {
             </a>
             {' | '}
             <a
-              href="https://magic.wizards.com/en/products/rivals-of-ixalan"
+              href="https://magic.wizards.com/en/news/card-image-gallery/rivals-of-ixalan"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.blockLink}
