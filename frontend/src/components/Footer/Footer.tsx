@@ -17,33 +17,35 @@ export function Footer() {
 
         <div className={styles.credits}>
           <p className={styles.copyright}>
-            © Alexandre Pedroza. Web Developer.
+            © Alexandre Pedroza. Web Developer
+          </p>
+          <p className={styles.linksLine}>
+            Magic: The Gathering is a Wizards property{' '}
+            <a
+              href="https://magic.wizards.com/en/products/ixalan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.blockLink}
+              aria-label="Ixalan — Magic: The Gathering official page"
+            >
+              Ixalan
+            </a>
+            {' | '}
+            <a
+              href="https://magic.wizards.com/en/products/rivals-of-ixalan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.blockLink}
+              aria-label="Rivals of Ixalan — Magic: The Gathering official page"
+            >
+              Rivals of Ixalan
+            </a>
           </p>
         </div>
 
         <div className={styles.brandLogo}>
           <span className={styles.ixalanLogo} aria-label="Ixalan">IXALAN</span>
         </div>
-      </div>
-
-      <div className={styles.links}>
-        <a
-          href="https://magic.wizards.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.footerLink}
-        >
-          Magic: The Gathering is a Wizards property
-        </a>
-        <span className={styles.separator} aria-hidden="true">|</span>
-        <a
-          href="https://magic.wizards.com/en/products/rivals-of-ixalan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.footerLink}
-        >
-          Rivals of Ixalan
-        </a>
       </div>
     </footer>
   )

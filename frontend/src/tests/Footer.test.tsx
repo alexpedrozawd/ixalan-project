@@ -24,9 +24,9 @@ describe('Footer', () => {
     expect(wotcParagraph).not.toBeInTheDocument()
   })
 
-  it('renders the Magic: The Gathering external link', () => {
+  it('renders the Ixalan external link', () => {
     render(<Footer />)
-    const link = screen.getByRole('link', { name: /magic: the gathering is a wizards property/i })
+    const link = screen.getByRole('link', { name: 'Ixalan — Magic: The Gathering official page' })
     expect(link).toBeInTheDocument()
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
