@@ -1,43 +1,39 @@
 import { useState } from 'react'
 import { Navbar as BsNavbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 import { ContactModal } from '@/components/ContactModal/ContactModal'
-import type { Language, NavLink } from '@/types'
 import styles from './Navbar.module.css'
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
-
-const NAV_LINKS: NavLink[] = [
-  { label: 'Home', href: `${BASE}/` },
-  { label: 'Articles', href: `${BASE}/articles` },
-  {
-    label: 'Card Database',
-    href: `${BASE}/card-database`,
-    hasDropdown: true,
-    dropdownItems: [
-      { label: 'Ixalan', href: `${BASE}/card-database/ixalan` },
-      { label: 'Rivals of Ixalan', href: `${BASE}/card-database/rivals` },
-    ],
-  },
-  { label: 'Contact', href: '' },
-]
 
 interface NavbarProps {
   activePage?: string
 }
 
 export function Navbar({ activePage = 'home' }: NavbarProps) {
-  const [language, setLanguage] = useState<Language>('en')
+  const { t, i18n } = useTranslation()
   const [showContact, setShowContact] = useState(false)
 
-  const toggleLanguage = (lang: Language) => setLanguage(lang)
+  const currentLang = i18n.language
+
+  const navLinks = [
+    { key: 'home', href: `${BASE}/` },
+    { key: 'articles', href: `${BASE}/articles` },
+    {
+      key: 'cardDatabase',
+      href: `${BASE}/card-database`,
+      hasDropdown: true,
+      dropdownItems: [
+        { key: 'ixalan', href: `${BASE}/card-database/ixalan` },
+        { key: 'rivalsOfIxalan', href: `${BASE}/card-database/rivals` },
+      ],
+    },
+    { key: 'contact', href: '' },
+  ]
 
   return (
     <>
-      <BsNavbar
-        expand="md"
-        className={styles.navbar}
-        data-testid="navbar"
-      >
+      <BsNavbar expand="md" className={styles.navbar} data-testid="navbar">
         <Container fluid="xl">
           <BsNavbar.Brand href={`${BASE}/`} className={styles.brand} aria-label="Ixalan News Home">
             <span className={styles.brandIxalan}>IXALAN</span>
@@ -47,60 +43,58 @@ export function Navbar({ activePage = 'home' }: NavbarProps) {
           <BsNavbar.Toggle
             aria-controls="main-nav"
             className={styles.toggler}
-            aria-label="Toggle navigation menu"
+            aria-label="Toggle navigation"
           />
 
           <BsNavbar.Collapse id="main-nav">
             <Nav className={`ms-auto ${styles.navLinks}`}>
-              {NAV_LINKS.map((link) =>
+              {navLinks.map((link) =>
                 link.hasDropdown ? (
                   <NavDropdown
-                    key={link.label}
-                    title={link.label}
-                    id={`dropdown-${link.label.toLowerCase().replace(' ', '-')}`}
+                    key={link.key}
+                    title={t(`navbar.${link.key}`)}
+                    id={`dropdown-${link.key}`}
                     className={styles.navDropdown}
                     menuVariant="dark"
                   >
                     {link.dropdownItems?.map((item) => (
                       <NavDropdown.Item
-                        key={item.label}
+                        key={item.key}
                         href={item.href}
                         className={styles.dropdownItem}
                       >
-                        {item.label}
+                        {t(`navbar.${item.key}`)}
                       </NavDropdown.Item>
                     ))}
                   </NavDropdown>
-                ) : link.label === 'Contact' ? (
+                ) : link.key === 'contact' ? (
                   <Nav.Link
-                    key={link.label}
+                    key={link.key}
                     as="button"
                     className={`${styles.navLink} ${styles.navLinkBtn}`}
                     onClick={() => setShowContact(true)}
                     aria-haspopup="dialog"
                   >
-                    {link.label}
+                    {t('navbar.contact')}
                   </Nav.Link>
                 ) : (
                   <Nav.Link
-                    key={link.label}
+                    key={link.key}
                     href={link.href}
-                    className={`${styles.navLink} ${
-                      activePage === link.label.toLowerCase() ? styles.active : ''
-                    }`}
-                    aria-current={activePage === link.label.toLowerCase() ? 'page' : undefined}
+                    className={`${styles.navLink} ${activePage === link.key ? styles.active : ''}`}
+                    aria-current={activePage === link.key ? 'page' : undefined}
                   >
-                    {link.label}
+                    {t(`navbar.${link.key}`)}
                   </Nav.Link>
                 )
               )}
 
               <div className={styles.languageFlags} role="group" aria-label="Language selector">
                 <button
-                  className={`${styles.flagBtn} ${language === 'en' ? styles.flagActive : ''}`}
-                  onClick={() => toggleLanguage('en')}
+                  className={`${styles.flagBtn} ${currentLang === 'en' ? styles.flagActive : ''}`}
+                  onClick={() => i18n.changeLanguage('en')}
                   aria-label="Switch to English"
-                  aria-pressed={language === 'en'}
+                  aria-pressed={currentLang === 'en'}
                 >
                   <img
                     src="https://flagcdn.com/w20/gb.png"
@@ -111,10 +105,10 @@ export function Navbar({ activePage = 'home' }: NavbarProps) {
                   />
                 </button>
                 <button
-                  className={`${styles.flagBtn} ${language === 'pt' ? styles.flagActive : ''}`}
-                  onClick={() => toggleLanguage('pt')}
+                  className={`${styles.flagBtn} ${currentLang === 'pt' ? styles.flagActive : ''}`}
+                  onClick={() => i18n.changeLanguage('pt')}
                   aria-label="Switch to Portuguese"
-                  aria-pressed={language === 'pt'}
+                  aria-pressed={currentLang === 'pt'}
                 >
                   <img
                     src="https://flagcdn.com/w20/br.png"

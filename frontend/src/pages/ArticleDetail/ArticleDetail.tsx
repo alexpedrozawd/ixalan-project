@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 import { Navbar } from '@/components/Navbar/Navbar'
 import { Footer } from '@/components/Footer/Footer'
 import { ARTICLES } from '@/data/articles'
@@ -7,8 +8,8 @@ import type { ArticleBodySection } from '@/types'
 import pageBg from '@/assets/images/about-ixalan.jpg'
 import styles from './ArticleDetail.module.css'
 
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-US', {
+function formatDate(dateStr: string, locale: string): string {
+  return new Date(dateStr).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -45,15 +46,10 @@ function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar activePage="articles" />
-      <div
-        className={styles.page}
-        style={{ backgroundImage: `url(${pageBg})` }}
-      >
+      <div className={styles.page} style={{ backgroundImage: `url(${pageBg})` }}>
         <div className={styles.overlay} aria-hidden="true" />
         <main className={styles.content}>
-          <Container>
-            {children}
-          </Container>
+          <Container>{children}</Container>
         </main>
       </div>
       <Footer />
@@ -63,14 +59,16 @@ function PageShell({ children }: { children: React.ReactNode }) {
 
 export function ArticleDetail() {
   const { slug } = useParams<{ slug: string }>()
+  const { t, i18n } = useTranslation()
   const article = ARTICLES.find((a) => a.slug === slug)
+  const locale = i18n.language === 'pt' ? 'pt-BR' : 'en-US'
 
   if (!article) {
     return (
       <PageShell>
         <div className={styles.panel} data-testid="article-not-found">
-          <Link to="/articles" className={styles.backLink}>← Back to Articles</Link>
-          <h1 className={styles.title}>Article not found</h1>
+          <Link to="/articles" className={styles.backLink}>{t('articleDetail.backToArticles')}</Link>
+          <h1 className={styles.title}>{t('articleDetail.notFound')}</h1>
         </div>
       </PageShell>
     )
@@ -79,13 +77,13 @@ export function ArticleDetail() {
   return (
     <PageShell>
       <article className={styles.panel} data-testid="article-detail">
-        <Link to="/articles" className={styles.backLink}>← Back to Articles</Link>
+        <Link to="/articles" className={styles.backLink}>{t('articleDetail.backToArticles')}</Link>
 
         <header className={styles.articleHeader}>
           <h1 className={styles.title}>{article.title}</h1>
           <p className={styles.subtitle}>{article.description}</p>
           <time className={styles.dateLine} dateTime={article.date}>
-            {formatDate(article.date)}
+            {formatDate(article.date, locale)}
           </time>
         </header>
 

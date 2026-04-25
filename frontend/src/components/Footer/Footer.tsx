@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next'
 import styles from './Footer.module.css'
 
 export function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className={styles.footer} data-testid="footer">
       <div className={styles.inner}>
@@ -17,10 +20,10 @@ export function Footer() {
 
         <div className={styles.credits}>
           <p className={styles.copyright}>
-            © Alexandre Pedroza. Web Developer
+            {t('footer.copyright')}
           </p>
           <p className={styles.linksLine}>
-            Magic: The Gathering is a Wizards property{' '}
+            {t('footer.wizardsText')}{' '}
             <a
               href="https://magic.wizards.com/en/news/card-image-gallery/ixalan"
               target="_blank"
@@ -28,7 +31,7 @@ export function Footer() {
               className={styles.blockLink}
               aria-label="Ixalan — Magic: The Gathering official page"
             >
-              Ixalan
+              {t('navbar.ixalan')}
             </a>
             {' | '}
             <a
@@ -38,11 +41,10 @@ export function Footer() {
               className={styles.blockLink}
               aria-label="Rivals of Ixalan — Magic: The Gathering official page"
             >
-              Rivals of Ixalan
+              {t('navbar.rivalsOfIxalan')}
             </a>
           </p>
         </div>
-
       </div>
     </footer>
   )

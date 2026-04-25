@@ -1,0 +1,69 @@
+{
+  "navbar": {
+    "home": "Início",
+    "articles": "Artigos",
+    "cardDatabase": "Banco de Cartas",
+    "ixalan": "Ixalan",
+    "rivalsOfIxalan": "Rivais de Ixalan",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Rivais de Ixalan:",
+    "subtitle": "Disponível agora!",
+    "cta": "VER AGORA"
+  },
+  "about": {
+    "heading": "Sobre Ixalan",
+    "text": "Ixalan é um plano composto por Ixalan e Rivais de Ixalan. É um cenário de aventura que enfatiza a descoberta de uma cidade perdida. Ixalan apresenta um mundo tropical onde quatro facções poderosas — o Império Solar, os Arautos do Rio, a Legião do Crepúsculo e a Coalizão Descarada — batalham pela dominância, cada uma com sua tribo distinta: Dinossauros, Sereias, Vampiros e Piratas. Fique por dentro de todas as novidades sobre a expansão de Magic e junte-se à caçada pelo Sol Imortal."
+  },
+  "news": {
+    "heading": "NOTÍCIAS DE IXALAN",
+    "viewMore": "Ver Mais",
+    "sidebar": [
+      {
+        "heading": "O que há de novo em Ixalan?",
+        "content": "Fique por dentro de todas as novidades sobre os blocos de Ixalan, incluindo as últimas cartas, estratégias e lore de Ixalan e Rivais de Ixalan."
+      },
+      {
+        "heading": "Tribos e decks para jogar",
+        "content": "Conheça as quatro Tribos e os decks indicados para jogar, explorando as sinergias de Dinossauros, Piratas, Sereias e Vampiros."
+      },
+      {
+        "heading": "Banco de cartas",
+        "content": "Uma lista de todas as cartas do bloco, incluindo os itens mais especiais de Ixalan. Navegue pela coleção completa com ferramentas de busca e filtro."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Alexandre Pedroza. Desenvolvedor Web",
+    "wizardsText": "Magic: The Gathering é uma propriedade da Wizards"
+  },
+  "contact": {
+    "title": "Contato",
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "email": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "message": "Mensagem",
+    "messagePlaceholder": "Escreva sua mensagem...",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "cancel": "Cancelar",
+    "errors": {
+      "nameRequired": "Nome é obrigatório.",
+      "emailRequired": "E-mail é obrigatório.",
+      "invalidEmail": "Endereço de e-mail inválido.",
+      "messageRequired": "Mensagem é obrigatória.",
+      "notConfigured": "Formulário ainda não configurado. Tente novamente mais tarde.",
+      "failed": "Falha ao enviar a mensagem."
+    },
+    "success": "Mensagem enviada com sucesso! Retornarei em breve."
+  },
+  "articles": {
+    "heading": "Todos os Artigos"
+  },
+  "articleDetail": {
+    "backToArticles": "← Voltar para Artigos",
+    "notFound": "Artigo não encontrado"
+  }
+}

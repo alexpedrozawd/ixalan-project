@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Modal, Form, Button, Spinner } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 import styles from './ContactModal.module.css'
 
 interface ContactModalProps {
@@ -16,6 +17,7 @@ function sanitize(value: string): string {
 }
 
 export function ContactModal({ show, onHide }: ContactModalProps) {
+  const { t } = useTranslation()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -38,14 +40,14 @@ export function ContactModal({ show, onHide }: ContactModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!name.trim()) return setErrorMsg('Name is required.')
-    if (!email.trim()) return setErrorMsg('E-mail is required.')
+    if (!name.trim()) return setErrorMsg(t('contact.errors.nameRequired'))
+    if (!email.trim()) return setErrorMsg(t('contact.errors.emailRequired'))
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      return setErrorMsg('Invalid e-mail address.')
-    if (!message.trim()) return setErrorMsg('Message is required.')
+      return setErrorMsg(t('contact.errors.invalidEmail'))
+    if (!message.trim()) return setErrorMsg(t('contact.errors.messageRequired'))
 
     if (!FORMSPREE_URL) {
-      setErrorMsg('Form not configured yet. Please try again later.')
+      setErrorMsg(t('contact.errors.notConfigured'))
       setStatus('error')
       return
     }
@@ -65,62 +67,57 @@ export function ContactModal({ show, onHide }: ContactModalProps) {
       setEmail('')
       setMessage('')
     } catch (err: unknown) {
-      setErrorMsg(err instanceof Error ? err.message : 'Failed to send message.')
+      setErrorMsg(err instanceof Error ? err.message : t('contact.errors.failed'))
       setStatus('error')
     }
   }
 
   return (
-    <Modal
-      show={show}
-      onHide={handleClose}
-      centered
-      contentClassName={styles.modalContent}
-    >
+    <Modal show={show} onHide={handleClose} centered contentClassName={styles.modalContent}>
       <Modal.Header closeButton closeVariant="white" className={styles.modalHeader}>
-        <Modal.Title className={styles.modalTitle}>Contact</Modal.Title>
+        <Modal.Title className={styles.modalTitle}>{t('contact.title')}</Modal.Title>
       </Modal.Header>
 
       <Modal.Body className={styles.modalBody}>
         {status === 'success' ? (
           <div className={styles.successMsg} role="alert">
             <span className={styles.successIcon}>✓</span>
-            <p>Message sent successfully! I'll get back to you soon.</p>
+            <p>{t('contact.success')}</p>
           </div>
         ) : (
           <Form onSubmit={handleSubmit} noValidate>
             <Form.Group className={styles.formGroup}>
-              <Form.Label className={styles.label}>Name</Form.Label>
+              <Form.Label className={styles.label}>{t('contact.name')}</Form.Label>
               <Form.Control
                 type="text"
                 value={name}
                 onChange={(e) => { setErrorMsg(''); setName(sanitize(e.target.value)) }}
-                placeholder="Your name"
+                placeholder={t('contact.namePlaceholder')}
                 className={styles.input}
                 disabled={status === 'submitting'}
               />
             </Form.Group>
 
             <Form.Group className={styles.formGroup}>
-              <Form.Label className={styles.label}>E-mail</Form.Label>
+              <Form.Label className={styles.label}>{t('contact.email')}</Form.Label>
               <Form.Control
                 type="email"
                 value={email}
                 onChange={(e) => { setErrorMsg(''); setEmail(sanitize(e.target.value)) }}
-                placeholder="your@email.com"
+                placeholder={t('contact.emailPlaceholder')}
                 className={styles.input}
                 disabled={status === 'submitting'}
               />
             </Form.Group>
 
             <Form.Group className={styles.formGroup}>
-              <Form.Label className={styles.label}>Message</Form.Label>
+              <Form.Label className={styles.label}>{t('contact.message')}</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}
                 value={message}
                 onChange={(e) => { setErrorMsg(''); setMessage(sanitize(e.target.value)) }}
-                placeholder="Write your message..."
+                placeholder={t('contact.messagePlaceholder')}
                 className={styles.textarea}
                 disabled={status === 'submitting'}
               />
@@ -137,8 +134,8 @@ export function ContactModal({ show, onHide }: ContactModalProps) {
                 disabled={status === 'submitting'}
               >
                 {status === 'submitting'
-                  ? <><Spinner as="span" animation="border" size="sm" className="me-2" />Sending…</>
-                  : 'Send'}
+                  ? <><Spinner as="span" animation="border" size="sm" className="me-2" />{t('contact.sending')}</>
+                  : t('contact.send')}
               </Button>
               <Button
                 type="button"
@@ -146,7 +143,7 @@ export function ContactModal({ show, onHide }: ContactModalProps) {
                 onClick={handleClose}
                 disabled={status === 'submitting'}
               >
-                Cancel
+                {t('contact.cancel')}
               </Button>
             </div>
           </Form>

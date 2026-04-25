@@ -1,6 +1,11 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, afterEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Navbar } from '@/components/Navbar/Navbar'
+import i18n from '../i18n'
+
+afterEach(() => {
+  i18n.changeLanguage('en')
+})
 
 describe('Navbar', () => {
   it('renders the IXALAN brand logo', () => {

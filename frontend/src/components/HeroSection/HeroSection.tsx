@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import heroImage from '@/assets/images/hero-rivals-ixalan.jpg'
 import styles from './HeroSection.module.css'
 
 export function HeroSection() {
+  const { t } = useTranslation()
+
   return (
     <section
       className={styles.hero}
@@ -12,9 +15,9 @@ export function HeroSection() {
       <div className={styles.overlay} aria-hidden="true" />
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Rivals of Ixalan:
+          {t('hero.title')}
           <br />
-          Available now!
+          {t('hero.subtitle')}
         </h1>
         <a
           href="https://magic.wizards.com/en/news/card-image-gallery/rivals-of-ixalan"
@@ -23,7 +26,7 @@ export function HeroSection() {
           className={styles.ctaButton}
           aria-label="See Rivals of Ixalan card gallery"
         >
-          SEE NOW <span aria-hidden="true">&#9658;</span>
+          {t('hero.cta')} <span aria-hidden="true">&#9658;</span>
         </a>
       </div>
     </section>

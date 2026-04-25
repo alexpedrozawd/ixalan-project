@@ -1,0 +1,69 @@
+{
+  "navbar": {
+    "home": "Home",
+    "articles": "Articles",
+    "cardDatabase": "Card Database",
+    "ixalan": "Ixalan",
+    "rivalsOfIxalan": "Rivals of Ixalan",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Rivals of Ixalan:",
+    "subtitle": "Available now!",
+    "cta": "SEE NOW"
+  },
+  "about": {
+    "heading": "About Ixalan",
+    "text": "Ixalan is a plane consisting of Ixalan and Rivals of Ixalan. It's an adventure-themed setting emphasizing the discovery of a lost city. Ixalan features a tropical world where four powerful factions — the Sun Empire, the River Heralds, the Legion of Dusk, and the Brazen Coalition — battle for dominance, each with its own distinct tribe: Dinosaurs, Merfolk, Vampires, and Pirates. Be aware of all the news about the latest Magic expansion and join the hunt for the Immortal Sun."
+  },
+  "news": {
+    "heading": "IXALAN NEWS",
+    "viewMore": "View More",
+    "sidebar": [
+      {
+        "heading": "What's new about Ixalan?",
+        "content": "Be aware of all the news about the Ixalan blocks, including the latest cards, strategies, and lore from both Ixalan and Rivals of Ixalan."
+      },
+      {
+        "heading": "Tribes and decks to play",
+        "content": "Find all the four Tribes and decks indicated to play, exploring Dinosaurs, Pirates, Merfolk, and Vampires synergies."
+      },
+      {
+        "heading": "Card database",
+        "content": "A list of all cards in the block, including the sweetest items of Ixalan. Browse the full collection with search and filter tools."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© Alexandre Pedroza. Web Developer",
+    "wizardsText": "Magic: The Gathering is a Wizards property"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "E-mail",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Write your message...",
+    "send": "Send",
+    "sending": "Sending…",
+    "cancel": "Cancel",
+    "errors": {
+      "nameRequired": "Name is required.",
+      "emailRequired": "E-mail is required.",
+      "invalidEmail": "Invalid e-mail address.",
+      "messageRequired": "Message is required.",
+      "notConfigured": "Form not configured yet. Please try again later.",
+      "failed": "Failed to send message."
+    },
+    "success": "Message sent successfully! I'll get back to you soon."
+  },
+  "articles": {
+    "heading": "All Articles"
+  },
+  "articleDetail": {
+    "backToArticles": "← Back to Articles",
+    "notFound": "Article not found"
+  }
+}
