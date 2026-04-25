@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Modal, Form, Button, Spinner } from 'react-bootstrap'
+import { Modal, Form, Spinner } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import styles from './ContactModal.module.css'
 
@@ -128,7 +128,7 @@ export function ContactModal({ show, onHide }: ContactModalProps) {
             )}
 
             <div className={styles.actions}>
-              <Button
+              <button
                 type="submit"
                 className={styles.btnSend}
                 disabled={status === 'submitting'}
@@ -136,15 +136,15 @@ export function ContactModal({ show, onHide }: ContactModalProps) {
                 {status === 'submitting'
                   ? <><Spinner as="span" animation="border" size="sm" className="me-2" />{t('contact.sending')}</>
                   : t('contact.send')}
-              </Button>
-              <Button
+              </button>
+              <button
                 type="button"
                 className={styles.btnCancel}
                 onClick={handleClose}
                 disabled={status === 'submitting'}
               >
                 {t('contact.cancel')}
-              </Button>
+              </button>
             </div>
           </Form>
         )}
