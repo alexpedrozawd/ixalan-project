@@ -119,12 +119,13 @@
   z-index: 3;
 }
 
-.fossil {
+.logo {
   display: block;
   width: 100%;
+  height: auto;
   max-height: 115px;
-  color: rgba(201, 168, 76, 0.82);
-  filter: drop-shadow(0 0 3px rgba(201, 168, 76, 0.3));
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.25));
   position: relative;
   z-index: 1;
 }
