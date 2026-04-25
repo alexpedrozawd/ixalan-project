@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Navbar as BsNavbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { Navbar as BsNavbar, Nav, Container } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { ContactModal } from '@/components/ContactModal/ContactModal'
 import styles from './Navbar.module.css'
@@ -19,15 +19,7 @@ export function Navbar({ activePage = 'home' }: NavbarProps) {
   const navLinks = [
     { key: 'home', href: `${BASE}/` },
     { key: 'articles', href: `${BASE}/articles` },
-    {
-      key: 'cardDatabase',
-      href: `${BASE}/card-database`,
-      hasDropdown: true,
-      dropdownItems: [
-        { key: 'ixalan', href: `${BASE}/card-database/ixalan` },
-        { key: 'rivalsOfIxalan', href: `${BASE}/card-database/rivals` },
-      ],
-    },
+    { key: 'cardDatabase', href: `${BASE}/card-database` },
     { key: 'contact', href: '' },
   ]
 
@@ -49,25 +41,7 @@ export function Navbar({ activePage = 'home' }: NavbarProps) {
           <BsNavbar.Collapse id="main-nav">
             <Nav className={`ms-auto ${styles.navLinks}`}>
               {navLinks.map((link) =>
-                link.hasDropdown ? (
-                  <NavDropdown
-                    key={link.key}
-                    title={t(`navbar.${link.key}`)}
-                    id={`dropdown-${link.key}`}
-                    className={styles.navDropdown}
-                    menuVariant="dark"
-                  >
-                    {link.dropdownItems?.map((item) => (
-                      <NavDropdown.Item
-                        key={item.key}
-                        href={item.href}
-                        className={styles.dropdownItem}
-                      >
-                        {t(`navbar.${item.key}`)}
-                      </NavDropdown.Item>
-                    ))}
-                  </NavDropdown>
-                ) : link.key === 'contact' ? (
+                link.key === 'contact' ? (
                   <Nav.Link
                     key={link.key}
                     as="button"

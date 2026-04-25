@@ -18,12 +18,13 @@ describe('Navbar', () => {
     render(<Navbar />)
     expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Articles' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Cards and Decks' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Contact' })).toBeInTheDocument()
   })
 
-  it('renders Card Database dropdown trigger', () => {
+  it('renders Cards and Decks link', () => {
     render(<Navbar />)
-    expect(screen.getByText('Card Database')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Cards and Decks' })).toBeInTheDocument()
   })
 
   it('renders language selector buttons', () => {

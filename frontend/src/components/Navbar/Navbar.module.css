@@ -62,7 +62,6 @@
 
 .navLink.active {
   color: var(--color-gold) !important;
-  font-weight: 600;
 }
 
 .navLinkBtn {
