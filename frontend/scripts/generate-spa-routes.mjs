@@ -14,6 +14,7 @@ const ROUTES = [
   'articles/welcome-to-ixalan-news',
   'articles/river-sneak-best-merfolk',
   'articles/carnage-tyrant-unstoppable',
+  'card-database',
 ]
 
 for (const route of ROUTES) {

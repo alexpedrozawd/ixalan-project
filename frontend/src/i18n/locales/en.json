@@ -65,5 +65,10 @@
   "articleDetail": {
     "backToArticles": "← Back to Articles",
     "notFound": "Article not found"
+  },
+  "deckBuilder": {
+    "systemStatus": "SYSTEM STATUS",
+    "maintenance": "Under Maintenance",
+    "comingSoon": "Coming Soon"
   }
 }
