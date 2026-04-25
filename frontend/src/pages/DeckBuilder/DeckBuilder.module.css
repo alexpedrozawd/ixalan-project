@@ -52,7 +52,7 @@
     0 0 0 1px rgba(201, 168, 76, 0.1),
     0 0 24px rgba(201, 168, 76, 0.08),
     inset 0 0 30px rgba(0, 0, 0, 0.5);
-  width: min(280px, 92%);
+  width: min(336px, 92%);
   overflow: hidden;
   animation: flicker 8s infinite;
 }
