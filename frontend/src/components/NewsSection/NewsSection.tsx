@@ -40,7 +40,7 @@ export function NewsSection({ articles = ARTICLES }: NewsSectionProps) {
               ))}
             </Row>
             <div className={styles.viewMore}>
-              <a href="/articles" className={styles.viewMoreLink} aria-label="View more articles">
+              <a href="https://alexpedrozawd.github.io/ixalan-project/articles/" className={styles.viewMoreLink} aria-label="View more articles">
                 View More
               </a>
             </div>

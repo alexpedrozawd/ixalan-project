@@ -6,7 +6,7 @@ export function HeroSection() {
     <section
       className={styles.hero}
       style={{ backgroundImage: `url(${heroImage})` }}
-      aria-label="Rivals of Ixalan — Available in stores"
+      aria-label="Rivals of Ixalan — Available now"
       data-testid="hero-section"
     >
       <div className={styles.overlay} aria-hidden="true" />
@@ -14,12 +14,14 @@ export function HeroSection() {
         <h1 className={styles.title}>
           Rivals of Ixalan:
           <br />
-          Available in stores!
+          Available now!
         </h1>
         <a
-          href="/articles"
+          href="https://magic.wizards.com/en/news/card-image-gallery/rivals-of-ixalan"
+          target="_blank"
+          rel="noopener noreferrer"
           className={styles.ctaButton}
-          aria-label="See Rivals of Ixalan articles"
+          aria-label="See Rivals of Ixalan card gallery"
         >
           SEE NOW <span aria-hidden="true">&#9658;</span>
         </a>

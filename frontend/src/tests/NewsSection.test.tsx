@@ -56,9 +56,9 @@ describe('NewsSection', () => {
     expect(screen.getByText(/card database/i)).toBeInTheDocument()
   })
 
-  it('renders the View More link pointing to /articles', () => {
+  it('renders the View More link pointing to the articles page', () => {
     render(<NewsSection />)
-    expect(screen.getByRole('link', { name: /view more articles/i })).toHaveAttribute('href', '/articles')
+    expect(screen.getByRole('link', { name: /view more articles/i })).toHaveAttribute('href', 'https://alexpedrozawd.github.io/ixalan-project/articles/')
   })
 
   it('has data-testid attribute', () => {

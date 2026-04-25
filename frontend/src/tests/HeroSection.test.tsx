@@ -13,11 +13,11 @@ describe('HeroSection', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Rivals of Ixalan:')
   })
 
-  it('renders the CTA button linking to articles', () => {
+  it('renders the CTA button linking to Rivals of Ixalan card gallery', () => {
     render(<HeroSection />)
-    const cta = screen.getByRole('link', { name: /see rivals of ixalan articles/i })
+    const cta = screen.getByRole('link', { name: /see rivals of ixalan card gallery/i })
     expect(cta).toBeInTheDocument()
-    expect(cta).toHaveAttribute('href', '/articles')
+    expect(cta).toHaveAttribute('href', 'https://magic.wizards.com/en/news/card-image-gallery/rivals-of-ixalan')
   })
 
   it('applies background-image style from local asset', () => {
