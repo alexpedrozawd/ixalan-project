@@ -72,6 +72,90 @@ export const ARTICLES: NewsArticle[] = [
     ],
   },
   {
+    id: 5,
+    title: 'Carnage Tyrant: The Unstoppable Dinosaur',
+    titlePt: 'Carnage Tyrant: O Dinossauro Imparável',
+    description: "Why the hexproof, uncounterable 7/6 is the most dominant threat Ixalan has ever produced",
+    descriptionPt: 'Por que o 7/6 com Hexproof e incontestável é a ameaça mais dominante que Ixalan já produziu',
+    imageUrl: 'https://api.scryfall.com/cards/xln/179?format=image&version=art_crop',
+    date: '2018-01-08',
+    slug: 'carnage-tyrant-unstoppable',
+    body: [
+      {
+        type: 'paragraph',
+        content:
+          'If you have been playing Standard since Ixalan released, you already know the pain of seeing a Carnage Tyrant hit the battlefield. A 7/6 Trample for six mana sounds impressive enough on its own, but Wizards of the Coast gave it two abilities that make it one of the most oppressive threats in the format: it cannot be countered, and it has Hexproof. Your opponent simply cannot interact with it through the stack or through targeted removal.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Think about what that means in practice. Lightning Strike? No. Cast Out? No. Vraska\'s Contempt is one of the very few answers in the format, and even that costs four mana. The only realistic outs are sweepers like Fumigate or Settle the Wreckage, and both require your opponent to have the right card at the right time. Carnage Tyrant does not care about counterspells, does not care about spot removal, and it tramples over every chump blocker in its way.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'These are the best cards to pair with Carnage Tyrant in a Dinosaur shell:',
+      },
+      {
+        type: 'list',
+        items: [
+          'Regisaur Alpha: gives Carnage Tyrant Haste when it enters, turning a future threat into an immediate one',
+          'Drover of the Mighty: a 1/1 that grows into a 3/3 whenever you control a Dinosaur — ramps into Carnage Tyrant a full turn early',
+          'Commune with Dinosaurs: lets you dig for Carnage Tyrant in the early game while also finding lands to hit six mana faster',
+          'Savage Stomp: one-mana fight spell that triggers Enrage on your other Dinosaurs while Carnage Tyrant just watches, immune to everything',
+          'Ripjaw Raptor: pairs beautifully with Carnage Tyrant — your opponent is forced to deal with both and has almost no clean answer to either',
+        ],
+      },
+      {
+        type: 'card-image',
+        cardUrl: 'https://api.scryfall.com/cards/xln/179?format=image&version=normal',
+        cardAlt: 'Carnage Tyrant — Legendary Dinosaur from Ixalan',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "I have been running two copies of Carnage Tyrant in my Dinosaur sideboard since the day it was released, and I have never once been disappointed to draw it. It closes games. It demands immediate answers. And when your opponent has none — and they often do not — it is simply game over. If you are building any green-based Dinosaur shell, Carnage Tyrant is not optional. It is mandatory.",
+      },
+    ],
+    bodyPt: [
+      {
+        type: 'paragraph',
+        content:
+          'Se você jogou Standard desde o lançamento de Ixalan, já conhece a dor de ver um Carnage Tyrant entrar no campo de batalha. Um 7/6 com Atropelar por seis manas já seria impressionante por si só, mas a Wizards of the Coast deu a ele duas habilidades que o tornam uma das ameaças mais opressoras do formato: ele não pode ser contido por contra-magias, e possui Hexproof. Seu oponente simplesmente não consegue interagir com ele pela pilha nem por remoções com alvo.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Pense no que isso significa na prática. Lightning Strike? Não. Cast Out? Não. Vraska\'s Contempt é uma das pouquíssimas respostas do formato, e mesmo ela custa quatro manas. As únicas saídas realistas são varridas como Fumigate ou Settle the Wreckage, e ambas exigem que seu oponente tenha a carta certa na hora certa. Carnage Tyrant não liga para contra-magias, não liga para remoções com alvo, e atropela qualquer bloqueador sacrificado em seu caminho.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Estas são as melhores cartas para combinar com Carnage Tyrant em um shell de Dinossauros:',
+      },
+      {
+        type: 'list',
+        items: [
+          'Regisaur Alpha: dá Ímpeto ao Carnage Tyrant quando ele entra, transformando uma ameaça futura em uma imediata',
+          'Drover of the Mighty: um 1/1 que vira 3/3 sempre que você controla um Dinossauro — adianta um turno inteiro para chegar em seis manas',
+          'Commune with Dinosaurs: permite procurar Carnage Tyrant no início da partida enquanto também encontra terrenos para acelerar',
+          'Savage Stomp: mágica de luta por um mana que dispara Fúria nos seus outros Dinossauros enquanto Carnage Tyrant observa, imune a tudo',
+          'Ripjaw Raptor: combina perfeitamente com Carnage Tyrant — seu oponente precisa lidar com os dois e quase não tem resposta limpa para nenhum',
+        ],
+      },
+      {
+        type: 'card-image',
+        cardUrl: 'https://api.scryfall.com/cards/xln/179?format=image&version=normal',
+        cardAlt: 'Carnage Tyrant — Dinossauro Lendário de Ixalan',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Tenho rodado duas cópias de Carnage Tyrant no meu sideboard de Dinossauros desde o dia do lançamento, e nunca me arrependi de comprá-lo. Ele fecha partidas. Exige respostas imediatas. E quando seu oponente não as tem — e frequentemente não tem — é simplesmente fim de jogo. Se você está montando qualquer shell de Dinossauros com verde, Carnage Tyrant não é opcional. É obrigatório.',
+      },
+    ],
+  },
+  {
     id: 2,
     title: 'Be Prepared for RIX Release',
     titlePt: 'Prepare-se para o Lançamento de RIX',

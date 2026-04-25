@@ -13,6 +13,7 @@ const ROUTES = [
   'articles/be-prepared-for-rix-release',
   'articles/welcome-to-ixalan-news',
   'articles/river-sneak-best-merfolk',
+  'articles/carnage-tyrant-unstoppable',
 ]
 
 for (const route of ROUTES) {

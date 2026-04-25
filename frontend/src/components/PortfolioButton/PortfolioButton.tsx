@@ -4,8 +4,6 @@ export function PortfolioButton() {
   return (
     <a
       href="https://alexpedrozawd.github.io"
-      target="_blank"
-      rel="noopener noreferrer"
       className={styles.btn}
       aria-label="Back to Alexandre Pedroza's portfolio"
     >

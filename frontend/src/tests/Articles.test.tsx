@@ -22,9 +22,9 @@ describe('Articles page', () => {
     expect(screen.getAllByTestId('news-card').length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders all four articles', () => {
+  it('renders all five articles', () => {
     renderArticles()
-    expect(screen.getAllByTestId('news-card')).toHaveLength(4)
+    expect(screen.getAllByTestId('news-card')).toHaveLength(5)
   })
 
   it('renders Rampaging Ferocidon article', () => {

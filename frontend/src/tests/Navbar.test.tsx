@@ -18,13 +18,13 @@ describe('Navbar', () => {
     render(<Navbar />)
     expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Articles' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Cards and Decks' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Deck Builder' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Contact' })).toBeInTheDocument()
   })
 
-  it('renders Cards and Decks link', () => {
+  it('renders Deck Builder link', () => {
     render(<Navbar />)
-    expect(screen.getByRole('link', { name: 'Cards and Decks' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Deck Builder' })).toBeInTheDocument()
   })
 
   it('renders language selector buttons', () => {
