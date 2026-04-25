@@ -61,7 +61,8 @@ export function ArticleDetail() {
   const { slug } = useParams<{ slug: string }>()
   const { t, i18n } = useTranslation()
   const article = ARTICLES.find((a) => a.slug === slug)
-  const locale = i18n.language === 'pt' ? 'pt-BR' : 'en-US'
+  const isPt = i18n.language === 'pt'
+  const locale = isPt ? 'pt-BR' : 'en-US'
 
   if (!article) {
     return (
@@ -80,8 +81,8 @@ export function ArticleDetail() {
         <Link to="/articles" className={styles.backLink}>{t('articleDetail.backToArticles')}</Link>
 
         <header className={styles.articleHeader}>
-          <h1 className={styles.title}>{article.title}</h1>
-          <p className={styles.subtitle}>{article.description}</p>
+          <h1 className={styles.title}>{isPt && article.titlePt ? article.titlePt : article.title}</h1>
+          <p className={styles.subtitle}>{isPt && article.descriptionPt ? article.descriptionPt : article.description}</p>
           <time className={styles.dateLine} dateTime={article.date}>
             {formatDate(article.date, locale)}
           </time>
@@ -95,7 +96,7 @@ export function ArticleDetail() {
         />
 
         <div className={styles.body}>
-          {article.body?.map((section, i) => (
+          {(isPt && article.bodyPt ? article.bodyPt : article.body)?.map((section, i) => (
             <BodySection key={i} section={section} />
           ))}
         </div>

@@ -9,11 +9,14 @@ export interface ArticleBodySection {
 export interface NewsArticle {
   id: number
   title: string
+  titlePt?: string
   description: string
+  descriptionPt?: string
   imageUrl: string
   date: string
   slug: string
   body?: ArticleBodySection[]
+  bodyPt?: ArticleBodySection[]
 }
 
 export interface SidebarSection {
