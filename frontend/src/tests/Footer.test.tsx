@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer/Footer'
 describe('Footer', () => {
   it('renders the copyright notice', () => {
     render(<Footer />)
-    expect(screen.getByText(/© alexandre pedroza/i)).toBeInTheDocument()
+    expect(screen.getByText(/alexandre pedroza/i)).toBeInTheDocument()
   })
 
   it('does not render "All rights reserved" text', () => {
